@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="rowCommentViewModel"
+            type="com.lion.boardproject.viewmodel.RowCommentViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/account_circle_24px"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/textViewRowCommentID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="@={rowCommentViewModel.textViewRowCommentIDText}"
+                />
+            <TextView
+                android:id="@+id/textViewRowCommentCheckUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:text="@={rowCommentViewModel.textViewRowCommentCheckUpdateText}"
+                />
+
+            <ImageButton
+                android:id="@+id/imageButtonRowCommentSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:background="?attr/selectableItemBackground"
+                android:onClick="@{() -> rowCommentViewModel.imageButtonRowCommentSettingOnClick()}"
+                app:srcCompat="@drawable/settings_24px" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewRowCommentContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:text="@={rowCommentViewModel.textViewRowCommentContentText}"
+            />
+
+        <TextView
+            android:id="@+id/textViewRowCommentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={rowCommentViewModel.textViewRowCommentTimeText}"
+            android:layout_gravity="end"
+            />
+
+        <TextView
+            android:id="@+id/textViewRowCommentTime2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={rowCommentViewModel.textViewRowCommentTime2Text}"
+            android:layout_gravity="end"
+            />
+    </LinearLayout>
+</layout>

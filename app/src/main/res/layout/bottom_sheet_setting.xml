@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="bottomSheetSettingViewModel"
+            type="com.lion.boardproject.viewmodel.BottomSheetSettingViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewBottomSheetNickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@={bottomSheetSettingViewModel.textViewBottomSheetNickNameText}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <TextView
+            android:id="@+id/textViewBottomSheetReply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@={bottomSheetSettingViewModel.textViewBottomSheetReplyText}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBottomSheetModify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:layout_weight="1"
+                android:text="@={bottomSheetSettingViewModel.buttonBottomSheetModifyText}"
+                android:onClick="@{() -> bottomSheetSettingViewModel.buttonBottomSheetModifyOnClick()}"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBottomSheetDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:layout_weight="1"
+                android:text="@={bottomSheetSettingViewModel.buttonBottomSheetDeleteText}"
+                android:onClick="@{() -> bottomSheetSettingViewModel.buttonBottomSheetDeleteOnClick()}"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
